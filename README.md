@@ -1,2 +1,3 @@
-# forum
-The open forum of "way to machine learning"
+# 线上讨论平台
+这个项目是为了在线交流创建的。如果您在[机器学习之路](www.way2ml.com)上遇到任何问题，或者有任何建议，您可以在这个项目里面给我留言，我会尽力回复。提问的方式是在 [Issues](https://github.com/way2ml/forum/issues)页面创建问题即可。感谢您的关注。
+
