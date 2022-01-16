@@ -17,8 +17,10 @@ dump_list= read_dumps(file_path=file_path, extra_line_num=9)
 print('Dump number: {}'.format(len(dump_list)))
 
 # The first dump 
-# print(dump_list[0].time_step)
-# print(dump_list[0].xyz_df)
+print(dump_list[0].time_step)
+print(dump_list[0].xyz_df)
+
+input()
 
 num_bins = 250     # 把模拟盒子分成几个小盒子
 num_dump = len(dump_list) # 一共有多少帧 = dump的次数
@@ -38,13 +40,13 @@ counter = 0
 for dump in dump_list:  # 遍历dump list中的所有数
     # Select all particels
     XYZ = dump.xyz_df
-    print('Before:',XYZ)
+    print('Before:', XYZ)
     XYZ = XYZ.loc[:, 2:].to_numpy() # Extract x,y,z
     print('After:', XYZ)
 
     X = XYZ[:0]
     # x_c = np.mean(X)  
-    print(X)
+    print('X is ', X)
     hist, bins = np.histogram(X,range=(0, 250), bins=num_bins) # 找出x的统计分布，算出每个盒子中的粒子数
     print('Distribution: {}'.format(hist))
     idx_max = np.argmax(hist)  # 找到每一帧中的最大的粒子数，并且标记它的序号

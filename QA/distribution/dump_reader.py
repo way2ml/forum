@@ -25,7 +25,7 @@ def read_dumps(file_path, extra_line_num):
         time_step = int(time_step_df[0])
 
         xyz_df = pd.read_csv(file_path, skiprows=line_pointer + 9, \
-                                   nrows=num_of_atom, sep='\t', header=None)
+                                   nrows=num_of_atom, sep='\s+', header=None)
         xyz_df = xyz_df.iloc[:,:]
         line_pointer += (extra_line_num + num_of_atom)
 
